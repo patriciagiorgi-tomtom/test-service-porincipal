@@ -4,7 +4,7 @@ bundle:
 
 include:
 
-   - "bundle_jobs/test.yml"
+   - "bundle_jobs/*.yml"
 targets:
   develop:
     mode: development
