@@ -29,6 +29,7 @@ jobs:
 
       - name: deploy
         env:
-           DATABRICKS_BUNDLE_ENV: prod
+           DATABRICKS_BUNDLE_ENV: "prod"
+           DATABRICKS_TOKEN: ""
         run : |
              ./databricks bundle deploy
