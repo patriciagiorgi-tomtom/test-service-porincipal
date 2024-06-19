@@ -19,6 +19,13 @@ targets:
       host: https://adb-958087675976543.3.azuredatabricks.net/ #road-furmiture-databricks
       #root_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/qa/testpat/${bundle.target}
       #artifact_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/stg/${bundle.target}/artifacts
+      working_rood: .
+
+
+
+
+
+
       
   prod:
     # We use 'mode: production' to indicate this is a production deployment.
