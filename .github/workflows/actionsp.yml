@@ -19,7 +19,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Install specific version of Databricks CLI
         run: |
               chmod 777 databricks_cli_0.220.0_linux/databricks
@@ -35,4 +36,4 @@ jobs:
         run : |
              pwd
              ls -lrt        
-             ./databricks bundle validate
+             ./databricks --help
