@@ -3,7 +3,7 @@ name: CI
 on:
   
   push:
-    branches: [ "main" ]
+    branches: [ "patricia" ]
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -31,9 +31,9 @@ jobs:
 
       - name: deploy
         env:
-           DATABRICKS_BUNDLE_ENV: "prod"
-           DATABRICKS_TOKEN: ""
+           DATABRICKS_BUNDLE_ENV: "qa"
+           DATABRICKS_TOKEN: "${{ secrets.DATABRICKS_TOKEN}}"
         run : |
              pwd
              ls -lrt        
-             ./databricks --help
+             ./databricks bandle deploy

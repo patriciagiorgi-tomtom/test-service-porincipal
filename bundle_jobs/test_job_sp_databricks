@@ -36,5 +36,4 @@ resources:
         git_branch: main
       queue:
         enabled: true
-      run_as:
-        service_principal_name: 634203b6-0b26-494e-9682-adc73c1186c4
+
