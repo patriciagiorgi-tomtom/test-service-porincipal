@@ -1,7 +1,7 @@
 resources:
   jobs:
-    ${bundle.environment}_databricks_sp:
-      name: ${bundle.environment}_databricks_sp
+    ${bundle.environment}_databricks_sp_pat:
+      name: ${bundle.environment}_databricks_sp_pat
       tasks:
         - task_key: test_local_principal
           notebook_task:
