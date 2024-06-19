@@ -5,7 +5,7 @@ resources:
       tasks:
         - task_key: test_local_principal
           notebook_task:
-            notebook_path: notebook.py
+            notebook_path: notebook
             source: GIT
           job_cluster_key: Job_cluster
       job_clusters:
