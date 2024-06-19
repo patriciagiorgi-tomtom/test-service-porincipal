@@ -1,0 +1,27 @@
+bundle:
+  name: serviceprincipal
+
+
+include:
+
+   - "bundle_jobs/test.yml"
+targets:
+  develop:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-958087675976543.3.azuredatabricks.net/
+      
+  
+      
+  prod:
+    # We use 'mode: production' to indicate this is a production deployment.
+    # Doing so enables strict verification of the settings below.
+    mode: production
+    workspace:
+      host: https://adb-958087675976543.3.azuredatabricks.net/
+
+    run_as:
+      service_principal_name: "634203b6-0b26-494e-9682-adc73c1186c4"
+
+

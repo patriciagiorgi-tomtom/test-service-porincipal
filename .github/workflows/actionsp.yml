@@ -1,14 +1,10 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,13 +20,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Install specific version of Databricks CLI
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+              chmod 777 databricks_cli_0.220.0_linux/databricks
+              databricks_cli_0.220.0_linux/databricks -v
+              cp databricks_cli_0.220.0_linux/databricks .
+              ./databricks -v
+
+      - name: deploy
+        env:
+           DATABRICKS_BUNDLE_ENV: prod
+        run : |
+             ./databricks bundle deploy
