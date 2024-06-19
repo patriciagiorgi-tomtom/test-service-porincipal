@@ -27,9 +27,12 @@ jobs:
               cp databricks_cli_0.220.0_linux/databricks .
               ./databricks -v
 
+
       - name: deploy
         env:
            DATABRICKS_BUNDLE_ENV: "prod"
            DATABRICKS_TOKEN: ""
         run : |
-             ./databricks bundle deploy
+             pwd
+             ls -lrt        
+             ./databricks bundle validate
