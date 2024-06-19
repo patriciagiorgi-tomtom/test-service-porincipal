@@ -31,16 +31,16 @@ jobs:
 
       - name: validate
         env:
-           DATABRICKS_BUNDLE_ENV: "prod"
+           DATABRICKS_BUNDLE_ENV: "qa"
            DATABRICKS_TOKEN: "${{ secrets.DATABRICKS_TOKEN}}"
         run : |
              pwd
              ls -lrt        
              ./databricks bundle validate
 
-      - name: validate
+      - name: deplot
         env:
-           DATABRICKS_BUNDLE_ENV: "prod"
+           DATABRICKS_BUNDLE_ENV: "qa"
            DATABRICKS_TOKEN: "${{ secrets.DATABRICKS_TOKEN}}"
         run : |
                   pwd
