@@ -29,7 +29,7 @@ jobs:
               ./databricks -v
 
 
-      - name: deploy
+      - name: validate
         env:
            DATABRICKS_BUNDLE_ENV: "prod"
            DATABRICKS_TOKEN: "${{ secrets.DATABRICKS_TOKEN}}"
@@ -37,3 +37,12 @@ jobs:
              pwd
              ls -lrt        
              ./databricks bundle validate
+
+      - name: validate
+        env:
+           DATABRICKS_BUNDLE_ENV: "prod"
+           DATABRICKS_TOKEN: "${{ secrets.DATABRICKS_TOKEN}}"
+        run : |
+                  pwd
+                  ls -lrt        
+                  ./databricks bundle deploy
