@@ -40,3 +40,13 @@ jobs:
            ARM_USE_MSI: "true"
         run : |               
                databricks bundle validate
+      - name: deploy
+        env:
+           DATABRICKS_BUNDLE_ENV: "sp"
+           DATABRICKS_HOST: "https://adb-958087675976543.3.azuredatabricks.net/"
+           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
+           ARM_CLIENT_ID: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
+           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET}}
+           ARM_USE_MSI: "true"
+        run : |               
+               databricks deploy validate
