@@ -6,10 +6,6 @@ on:
     branches: [ "patricia" ]
 
 
-defaults:
-   run:
-      working-directory: .
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -32,17 +28,16 @@ jobs:
 
       - name: validate
         env:
-           DATABRICKS_BUNDLE_ENV: "qa"
-           DATABRICKS_TOKEN: "${{ secrets.DATABRICKS_TOKEN}}"
+           DATABRICKS_BUNDLE_ENV: "sp"
+           DATABRICKS_TOKEN: "424e0dc77da85669042823fed586f902a5122ea5814895299a88a642dc45f6be"
         run : |
-             pwd
-             ls -lrt        
+       
              ./databricks bundle validate
 
       - name: deplot
         env:
-           DATABRICKS_BUNDLE_ENV: "qa"
-           DATABRICKS_TOKEN: "${{ secrets.DATABRICKS_TOKEN}}"
+           DATABRICKS_BUNDLE_ENV: "sp"
+           DATABRICKS_TOKEN: "424e0dc77da85669042823fed586f902a5122ea5814895299a88a642dc45f6be"
         run : |
                   pwd
                   ls -lrt        
