@@ -19,9 +19,16 @@ targets:
       host: https://adb-958087675976543.3.azuredatabricks.net/ #road-furmiture-databricks
       #root_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/qa/testpat/${bundle.target}
       #artifact_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/stg/${bundle.target}/artifacts
-      working_rood: .
 
 
+  pat:
+    workspace:
+      #host: https://adb-1109565147703855.15.azuredatabricks.net #este es qa
+      #host: https://adb-2613340384930570.10.azuredatabricks.net/ #road-furmiture-databricks-big
+      host: https://adb-958087675976543.3.azuredatabricks.net/ #road-furmiture-databricks
+      #root_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/qa/testpat/${bundle.target}
+      #artifact_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/stg/${bundle.target}/artifacts
+      
 
 
 
