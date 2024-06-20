@@ -33,7 +33,7 @@ targets:
       #root_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/qa/testpat/${bundle.target}
       #artifact_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/stg/${bundle.target}/artifacts
     run_as:
-      service_principal_name: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
+      service_principal_name: 3e4dfbed-5f39-434d-9812-ece9c98cb936
 
 
 
@@ -47,6 +47,6 @@ targets:
       host: https://adb-958087675976543.3.azuredatabricks.net/
 
     run_as:
-      service_principal_name: "634203b6-0b26-494e-9682-adc73c1186c4"
+      service_principal_name: 3e4dfbed-5f39-434d-9812-ece9c98cb936
 
 
