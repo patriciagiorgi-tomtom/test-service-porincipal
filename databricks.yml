@@ -7,7 +7,7 @@ permissions:
 
 include:
 
-   - "bundle_jobs/*.yml"
+   - "bundle_jobs/test_job_sp_databricks.yml"
 targets:
   develop:
     mode: development
