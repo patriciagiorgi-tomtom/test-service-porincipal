@@ -3,7 +3,7 @@ bundle:
 
 permissions:
   - level: CAN_MANAGE
-    service_principal_name: "3e4dfbed-5f39-434d-9812-ece9c98cb936
+    service_principal_name: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
 "
 
 include:
