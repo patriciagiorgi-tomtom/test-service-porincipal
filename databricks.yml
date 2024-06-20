@@ -32,7 +32,7 @@ targets:
       host: https://adb-958087675976543.3.azuredatabricks.net/ #road-furmiture-databricks
       #root_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/qa/testpat/${bundle.target}
       #artifact_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/stg/${bundle.target}/artifacts
-      run_as:
+    run_as:
       service_principal_name: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
 
 
