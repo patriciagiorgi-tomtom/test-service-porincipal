@@ -28,17 +28,10 @@ jobs:
 
       - name: validate
         env:
-           DATABRICKS_BUNDLE_ENV: "sp"
-           DATABRICKS_TOKEN: "424e0dc77da85669042823fed586f902a5122ea5814895299a88a642dc45f6be"
+           DATABRICKS_HOST: "https://adb-958087675976543.3.azuredatabricks.net/"
+           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
+           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID}}
+           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET}}
         run : |
-       
-             ./databricks bundle validate
-
-      - name: deplot
-        env:
-           DATABRICKS_BUNDLE_ENV: "sp"
-           DATABRICKS_TOKEN: "424e0dc77da85669042823fed586f902a5122ea5814895299a88a642dc45f6be"
-        run : |
-                  pwd
-                  ls -lrt        
-                  ./databricks bundle deploy
+               env
+               ./databricks bundle validate
