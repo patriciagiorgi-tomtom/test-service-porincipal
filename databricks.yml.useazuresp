@@ -1,0 +1,51 @@
+bundle:
+  name: serviceprincipal
+
+permissions:
+  - level: CAN_MANAGE
+    service_principal_name: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
+
+include:
+
+   - "bundle_jobs/test_job_sp_databricks.yml"
+targets:
+  develop:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-958087675976543.3.azuredatabricks.net/
+      
+  qa:
+    workspace:
+      #host: https://adb-1109565147703855.15.azuredatabricks.net #este es qa
+      #host: https://adb-2613340384930570.10.azuredatabricks.net/ #road-furmiture-databricks-big
+      host: https://adb-958087675976543.3.azuredatabricks.net/ #road-furmiture-databricks
+      #root_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/qa/testpat/${bundle.target}
+      #artifact_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/stg/${bundle.target}/artifacts
+
+
+  sp:
+    workspace:
+      #host: https://adb-1109565147703855.15.azuredatabricks.net #este es qa
+      #host: https://adb-2613340384930570.10.azuredatabricks.net/ #road-furmiture-databricks-big
+      host: https://adb-958087675976543.3.azuredatabricks.net/ #road-furmiture-databricks
+      #root_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/qa/testpat/${bundle.target}
+      #artifact_path: /Users/${workspace.current_user.userName}/.bundle/${bundle.name}/stg/${bundle.target}/artifacts
+    run_as:
+      service_principal_name: 3e4dfbed-5f39-434d-9812-ece9c98cb936
+
+
+
+
+      
+  prod:
+    # We use 'mode: production' to indicate this is a production deployment.
+    # Doing so enables strict verification of the settings below.
+    mode: production
+    workspace:
+      host: https://adb-958087675976543.3.azuredatabricks.net/
+
+    run_as:
+      service_principal_name: 3e4dfbed-5f39-434d-9812-ece9c98cb936
+
+

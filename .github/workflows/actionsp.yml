@@ -25,28 +25,48 @@ jobs:
       #         cp databricks_cli_0.220.0_linux/databricks .
       #         ./databricks -v
 
-      - name: Install Databricks CLI
+      # - name: Install Databricks CLI
+      #   run: |
+      #       curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      #       databricks -v
+      #       echo $PATH
+      # - name: validate
+      #   env:
+      #      DATABRICKS_BUNDLE_ENV: "sp"
+      #      DATABRICKS_HOST: "https://adb-958087675976543.3.azuredatabricks.net/"
+      #      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
+      #      ARM_CLIENT_ID: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
+      #      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET}}
+      #      ARM_USE_MSI: "true"
+      #   run : |               
+      #          databricks bundle validate
+      # - name: deploy
+      #   env:
+      #      DATABRICKS_BUNDLE_ENV: "sp"
+      #      DATABRICKS_HOST: "https://adb-958087675976543.3.azuredatabricks.net/"
+      #      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
+      #      ARM_CLIENT_ID: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
+      #      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET}}
+      #      ARM_USE_MSI: "true"
+      #   run : |               
+      #          databricks  bundle deploy 
+
+  delta:
+     runs-on: python:3.11-buster
+     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: requeriments
         run: |
-            curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
-            databricks -v
-            echo $PATH
-      - name: validate
-        env:
-           DATABRICKS_BUNDLE_ENV: "sp"
-           DATABRICKS_HOST: "https://adb-958087675976543.3.azuredatabricks.net/"
-           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
-           ARM_CLIENT_ID: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
-           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET}}
-           ARM_USE_MSI: "true"
-        run : |               
-               databricks bundle validate
-      - name: deploy
-        env:
-           DATABRICKS_BUNDLE_ENV: "sp"
-           DATABRICKS_HOST: "https://adb-958087675976543.3.azuredatabricks.net/"
-           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
-           ARM_CLIENT_ID: "3e4dfbed-5f39-434d-9812-ece9c98cb936"
-           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET}}
-           ARM_USE_MSI: "true"
-        run : |               
-               databricks  bundle deploy 
+              apt-get update && apt-get install -y openjdk-11-jre
+              python --version
+              curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+              pip install --upgrade pip
+              pip install pyspark==3.4.1
+              pip install ipykernel
+              
+
+
+
+
+               
