@@ -52,19 +52,20 @@ jobs:
       #          databricks  bundle deploy 
 
   delta:
-     runs-on: python:3.11-buster
+     runs-on: ubuntu-latest
      steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: requeriments
         run: |
               apt-get update && apt-get install -y openjdk-11-jre
+              apt-get install python
               python --version
               curl -sL https://aka.ms/InstallAzureCLIDeb | bash
               pip install --upgrade pip
               pip install pyspark==3.4.1
               pip install ipykernel
-              
+
 
 
 
